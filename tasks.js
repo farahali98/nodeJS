@@ -36,6 +36,8 @@ tasks = ['eat', 'sleep'];
 function onDataReceived(text) {
     var start = text.startsWith('hello')
     var start1 = text.startsWith('help')
+    var start2 = text.startsWith("add")
+
     if (text === 'quit\n' || text === 'exit\n') {
         quit();
     } else if (text == "hello") {
@@ -49,6 +51,9 @@ function onDataReceived(text) {
         Modified_help(text);
     } else if (text === 'list\n') {
         list();
+    } else if (start2) {
+        let arr = text.split(" ");
+        add(arr[1]);
     } else {
         unknownCommand(text);
     }
@@ -59,6 +64,17 @@ function list() {
         console.log(tasks);
     } else {
         console.log("there are no tasks yet!");
+    }
+}
+
+
+function add(value) {
+    if (value.length === 0) {
+        console.log("Error");
+
+    } else {
+        tasks.push(value);
+        console.log("new task's list: " + tasks);
     }
 }
 
