@@ -86,7 +86,9 @@ function remove(sta) {
 
     if (sta === "") {
         tasks.pop();
+    } else if (sta > tasks.length) {
 
+        console.log("This numer doesn't exist in the list");
     } else {
         tasks.splice(sta, sta);
 
