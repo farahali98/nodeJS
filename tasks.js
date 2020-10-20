@@ -34,6 +34,7 @@ function startApp(name) {
  */
 function onDataReceived(text) {
     var start = text.startsWith('hello')
+    var start1 = text.startsWith('help')
     if (text === 'quit\n' || text === 'exit\n') {
         quit();
     } else if (text == "hello") {
@@ -42,6 +43,9 @@ function onDataReceived(text) {
         help();
     } else if (start) {
         Modified_hello(text);
+
+    } else if (start1) {
+        Modified_help(text);
     } else {
         unknownCommand(text);
     }
@@ -62,6 +66,8 @@ function Modified_hello(c) {
     console.log(c.trim() + "!");
 }
 
+
+
 /**
  * Says hello
  *
@@ -79,7 +85,7 @@ function hello() {
 
 
 function help() {
-
+    console.log('hello+x prints hello and name');
     console.log('press Hello to recieve it');
     console.log('press exit or quit to get out of the app');
 
