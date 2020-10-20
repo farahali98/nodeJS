@@ -58,6 +58,8 @@ function onDataReceived(text) {
     } else if (start3) {
         let arr1 =
             remove(arr[1]);
+    } else if (text.startsWith("edit")) {
+        edit(text);
     } else {
         unknownCommand(text);
     }
@@ -95,6 +97,19 @@ function remove(sta) {
     }
 
 }
+
+function edit(ed) {
+    if (ed === "edit") {
+        console.log("Error");
+
+    } else if (ed === "edit new text") {
+        tasks[-1] = "new text"
+    } else if (ed === "edit 1 new text") {
+        tasks[0] = "new text"
+    }
+}
+
+
 
 /**
  * prints "unknown command"
