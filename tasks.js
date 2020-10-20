@@ -37,6 +37,8 @@ function onDataReceived(text) {
     var start = text.startsWith('hello')
     var start1 = text.startsWith('help')
     var start2 = text.startsWith("add")
+    var start3 = text.startsWith("remove")
+    let arr = text.split(" ");
 
     if (text === 'quit\n' || text === 'exit\n') {
         quit();
@@ -52,8 +54,10 @@ function onDataReceived(text) {
     } else if (text === 'list\n') {
         list();
     } else if (start2) {
-        let arr = text.split(" ");
         add(arr[1]);
+    } else if (start3) {
+        let arr1 =
+            remove(arr[1]);
     } else {
         unknownCommand(text);
     }
@@ -76,6 +80,18 @@ function add(value) {
         tasks.push(value);
         console.log("new task's list: " + tasks);
     }
+}
+
+function remove(sta) {
+
+    if (sta === "") {
+        tasks.pop();
+
+    } else {
+        tasks.splice(sta, sta);
+
+    }
+
 }
 
 /**
