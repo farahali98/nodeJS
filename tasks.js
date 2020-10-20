@@ -66,6 +66,13 @@ function hello() {
     console.log('hello!')
 }
 
+/**
+ * prints all possible commands
+ *
+ * @returns {void}
+ */
+
+
 function help() {
 
     console.log('press Hello to recieve it');
