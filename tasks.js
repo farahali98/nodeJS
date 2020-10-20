@@ -15,6 +15,7 @@ function startApp(name) {
     console.log(`Welcome to ${name}'s application!`)
     console.log("--------------------")
 }
+tasks = ['eat', 'sleep'];
 
 
 /**
@@ -46,8 +47,18 @@ function onDataReceived(text) {
 
     } else if (start1) {
         Modified_help(text);
+    } else if (text === 'list\n') {
+        list();
     } else {
         unknownCommand(text);
+    }
+}
+
+function list() {
+    if (tasks.length > 0) {
+        console.log(tasks);
+    } else {
+        console.log("there are no tasks yet!");
     }
 }
 
@@ -73,6 +84,10 @@ function Modified_hello(c) {
  *
  * @returns {void}
  */
+
+
+
+
 function hello() {
     console.log('hello!')
 }
