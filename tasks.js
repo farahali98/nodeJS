@@ -152,7 +152,8 @@ function help() {
     console.log('hello+x prints hello and name');
     console.log('press Hello to recieve it');
     console.log('press exit or quit to get out of the app');
-
+    console.log('YOU CAN ADD ITEMS TO THE TASKS USING ADD COMAND AND PPECIFYING THE TASK')
+    console.log("press remove to remove items from list")
 
 }
 
